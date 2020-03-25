@@ -10,10 +10,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
+import NewHomePage from 'containers/NewHomePage/Loadable';
+import NewHeader from 'components/NewHeader';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
 
 /*
   TODO:
@@ -35,13 +34,11 @@ export default function App() {
       >
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
-      <Header />
+      <NewHeader />
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/events" component={() => <span>events</span>} />
+        <Route exact path="/" component={NewHomePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer />
     </>
   );
 }

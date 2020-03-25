@@ -68,7 +68,7 @@ export function NewHomePage({
       </Helmet>
       <div>
         <CenteredSection>
-          <H2 className="TEST">
+          <H2>
             <FormattedMessage {...messages.startProjectHeader} />
           </H2>
         </CenteredSection>

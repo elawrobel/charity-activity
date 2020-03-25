@@ -23,7 +23,7 @@ const AppWrapper = styled.div`
   min-height: 100%;
   padding: 0 16px;
   flex-direction: column;
-  background-color: ##dfe0e0;
+  background-color: #dfe0e0;
 `;
 
 export default function App() {
