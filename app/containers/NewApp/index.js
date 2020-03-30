@@ -7,13 +7,15 @@
  */
 
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet'; // QA: dlaczego niektóre importy są w nawiasach a inne nie?
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Menu from 'components/Menu';
+import Title from 'components/Title';
 
 /*
   TODO:
@@ -35,6 +37,8 @@ export default function App() {
       >
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
+      <Menu />
+      <Title />
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
