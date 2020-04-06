@@ -11,8 +11,11 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
-import NewHomePage from 'containers/NewHomePage/Loadable';
-import NewHeader from 'components/NewHeader';
+import HomePage from 'containers/HomePage/Loadable';
+import FeaturePage from 'containers/FeaturePage/Loadable';
+import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 import GlobalStyle from '../../global-styles';
 
@@ -23,7 +26,6 @@ const AppWrapper = styled.div`
   min-height: 100%;
   padding: 0 16px;
   flex-direction: column;
-  background-color: #dfe0e0;
 `;
 
 export default function App() {
@@ -35,10 +37,13 @@ export default function App() {
       >
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
-      <NewHeader />
+      <Header />
       <Switch>
-        <Route exact path="/" component={NewHomePage} />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/features" component={FeaturePage} />
+        <Route path="" component={NotFoundPage} />
       </Switch>
+      <Footer />
       <GlobalStyle />
     </AppWrapper>
   );
