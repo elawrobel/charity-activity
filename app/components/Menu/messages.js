@@ -5,7 +5,7 @@
  */
 import { defineMessages } from 'react-intl';
 
-export const scope = 'boilerplate.components.Menu';
+export const scope = 'charityActivity.components.Menu';
 
 export default defineMessages({
   home: {
