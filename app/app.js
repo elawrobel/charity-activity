@@ -14,6 +14,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import FontFaceObserver from 'fontfaceobserver';
+import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import history from 'utils/history';
 import 'sanitize.css/sanitize.css';
 import { ThemeProvider } from 'styled-components';
@@ -35,6 +36,8 @@ import configureStore from './configureStore';
 // Import i18n messages
 import { translationMessages } from './i18n';
 
+import { configureFirebaseStore } from './firebase/firebase';
+
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
 const openSansObserver = new FontFaceObserver('Open Sans', {});
@@ -47,18 +50,21 @@ openSansObserver.load().then(() => {
 // Create redux store with history
 const initialState = {};
 const store = configureStore(initialState, history);
+const rrfProps = configureFirebaseStore(store);
 const MOUNT_NODE = document.getElementById('app');
 
 const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <LanguageProvider messages={messages}>
-          <ConnectedRouter history={history}>
-            <App />
-          </ConnectedRouter>
-        </LanguageProvider>
-      </ThemeProvider>
+        <ReactReduxFirebaseProvider {...rrfProps}>
+          <LanguageProvider messages={messages}>
+            <ConnectedRouter history={history}>
+              <App />
+            </ConnectedRouter>
+          </LanguageProvider>
+        </ThemeProvider>
+      </ReactReduxFirebaseProvider>
     </Provider>,
     MOUNT_NODE,
   );

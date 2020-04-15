@@ -7,6 +7,8 @@ import { initialState } from './reducer';
 
 const selectGlobal = state => state.global || initialState;
 
+const selectFirebase = state => state.firebase;
+
 const selectRouter = state => state.router;
 
 const makeSelectCurrentUser = () =>
@@ -39,6 +41,12 @@ const makeSelectLocation = () =>
     routerState => routerState.location,
   );
 
+const makeSelectEvents = () =>
+  createSelector(
+    selectFirebase,
+    firebase => firebase.ordered.events,
+  );
+
 export {
   selectGlobal,
   makeSelectCurrentUser,
@@ -46,4 +54,5 @@ export {
   makeSelectError,
   makeSelectRepos,
   makeSelectLocation,
+  makeSelectEvents,
 };
