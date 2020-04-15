@@ -1,6 +1,14 @@
-export const Theme = {
-  primaryDark: '#0D0C1D',
-  primaryLight: '#EFFFFA',
-  primaryHover: '#343078',
-  mobile: '576px',
+export const theme = {
+  colors: {
+    powderWhite: '#FFFDF9',
+    primaryDark: '#06B49A',
+    lightBlue: '#AFDBD2',
+    onyx: '#36313D',
+  },
+  fonts: ['sans-serif', 'Roboto'],
+  fontSizes: {
+    small: '1em',
+    medium: '2em',
+    large: '3em',
+  }
 }
