@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom';  //QA: nie do końca łapie skąd i co on pobiera
+import { Link } from 'react-router-dom';
 import messages from './messages';
-
 
 const Nav = styled.ul`
   text-align: right;

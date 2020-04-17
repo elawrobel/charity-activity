@@ -1,9 +1,9 @@
 export const theme = {
   colors: {
-    powderWhite: '#FFFDF9',
-    primaryDark: '#06B49A',
-    lightBlue: '#AFDBD2',
-    onyx: '#36313D',
+    black: '#000000',
+    white: '#ffffff',
+    blue: '#3b3aff',
+    grey: '#ececea',
   },
   fonts: ['sans-serif', 'Roboto'],
   fontSizes: {

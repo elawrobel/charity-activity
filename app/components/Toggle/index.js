@@ -7,8 +7,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Select from './Select';
+import styled from 'styled-components';
 import ToggleOption from '../ToggleOption';
+
+const Select = styled.select`
+  line-height: 1em;
+  background-color: transparent;
+  border-style: none;
+`;
 
 function Toggle(props) {
   let content = <option>--</option>;
