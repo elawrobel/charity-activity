@@ -11,6 +11,7 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
+import { firebaseConnect } from 'react-redux-firebase';
 
 import { useInjectReducer } from 'utils/injectReducer';
 import { useInjectSaga } from 'utils/injectSaga';
@@ -18,6 +19,7 @@ import {
   makeSelectRepos,
   makeSelectLoading,
   makeSelectError,
+  makeSelectEvents,
 } from 'containers/App/selectors';
 import H2 from 'components/H2';
 import ReposList from 'components/ReposList';
@@ -115,6 +117,7 @@ const mapStateToProps = createStructuredSelector({
   username: makeSelectUsername(),
   loading: makeSelectLoading(),
   error: makeSelectError(),
+  events: makeSelectEvents(),
 });
 
 export function mapDispatchToProps(dispatch) {
@@ -132,7 +135,10 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
+const withFirebase = firebaseConnect(['events']);
+
 export default compose(
+  withFirebase,
   withConnect,
   memo,
 )(HomePage);
