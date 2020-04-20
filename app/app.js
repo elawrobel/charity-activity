@@ -17,6 +17,7 @@ import FontFaceObserver from 'fontfaceobserver';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import history from 'utils/history';
 import 'sanitize.css/sanitize.css';
+import { ThemeProvider } from 'styled-components';
 
 // Import root app
 // import App from 'containers/App';
@@ -24,6 +25,7 @@ import App from 'containers/NewApp';
 
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
+import { theme } from './theme';
 
 // Load the favicon and the .htaccess file
 import '!file-loader?name=[name].[ext]!./images/favicon.ico';
@@ -54,12 +56,14 @@ const MOUNT_NODE = document.getElementById('app');
 const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
-      <ReactReduxFirebaseProvider {...rrfProps}>
-        <LanguageProvider messages={messages}>
-          <ConnectedRouter history={history}>
-            <App />
-          </ConnectedRouter>
-        </LanguageProvider>
+      <ThemeProvider theme={theme}>
+        <ReactReduxFirebaseProvider {...rrfProps}>
+          <LanguageProvider messages={messages}>
+            <ConnectedRouter history={history}>
+              <App />
+            </ConnectedRouter>
+          </LanguageProvider>
+        </ThemeProvider>
       </ReactReduxFirebaseProvider>
     </Provider>,
     MOUNT_NODE,
