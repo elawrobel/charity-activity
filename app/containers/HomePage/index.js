@@ -22,7 +22,6 @@ import {
   makeSelectEvents,
 } from 'containers/App/selectors';
 import H2 from 'components/H2';
-import CssModulesButton from 'components/Button2';
 import ReposList from 'components/ReposList';
 import AtPrefix from './AtPrefix';
 import CenteredSection from './CenteredSection';
@@ -97,9 +96,6 @@ export function HomePage({
               />
             </label>
           </Form>
-          <div>
-            <CssModulesButton>hi css modules</CssModulesButton>
-          </div>
           <ReposList {...reposListProps} />
         </Section>
       </div>
