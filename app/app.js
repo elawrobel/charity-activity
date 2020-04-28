@@ -56,8 +56,8 @@ const MOUNT_NODE = document.getElementById('app');
 const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <ReactReduxFirebaseProvider {...rrfProps}>
+      <ReactReduxFirebaseProvider {...rrfProps}>
+        <ThemeProvider theme={theme}>
           <LanguageProvider messages={messages}>
             <ConnectedRouter history={history}>
               <App />
