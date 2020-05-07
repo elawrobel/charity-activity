@@ -4,8 +4,13 @@ export const theme = {
     white: '#ffffff',
     blue: '#3b3aff',
     grey: '#ececea',
+    yellow: '#fde452',
   },
-  fonts: ['sans-serif', 'Roboto'],
+  fonts:{
+    title: 'Quicksand',
+    random: 'Roboto Slab',
+    beckup: 'sans-serif',
+  },
   fontSizes: {
     small: '1em',
     medium: '2em',
