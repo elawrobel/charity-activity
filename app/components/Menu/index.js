@@ -38,7 +38,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   outline: 0;
-  font-family: ${props => props.theme.fonts.random};
+  font-family: ${props => props.theme.fonts.text};
   font-size: 16px;
   color: ${props => props.theme.colors.black};
 
@@ -67,7 +67,7 @@ const Button = styled.button`
 
   span{
     display: inline-block;
-    font-family: ${props => props.theme.fonts.random};
+    font-family: ${props => props.theme.fonts.text};
     border-radius: 10px;
     text-align: center;
     white-space: nowrap;
@@ -99,8 +99,9 @@ function Menu() {
         </NavItem>
         <NavItem>
           <Button to="/add-event">
-            <FormattedMessage {...messages.add} />
-            {/* QA: kady messages wpada w span, da się temu jakoś zapobiec? */}
+            <FormattedMessage {...messages.add}>
+              {msg => <span>{msg}</span>}
+            </FormattedMessage>
           </Button>
         </NavItem>
       </Nav>

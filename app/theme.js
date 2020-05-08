@@ -8,8 +8,7 @@ export const theme = {
   },
   fonts:{
     title: 'Quicksand',
-    random: 'Roboto Slab',
-    beckup: 'sans-serif',
+    text: 'Roboto Slab',
   },
   fontSizes: {
     small: '1em',
