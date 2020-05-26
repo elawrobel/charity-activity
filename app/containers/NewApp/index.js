@@ -35,9 +35,10 @@ export default function App() {
         titleTemplate="%s - Charity activity"
         defaultTitle="Charity activity"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="Charity activity" />
       </Helmet>
       <Menu />
+      
       <Title />
       <Header />
       <Switch>
