@@ -15,13 +15,19 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 4rem;
 `;
 
 const Nav = styled.ul`
   display: flex;
   flex-direction: row;
+
+/* To DO: do mobile */
+  @media (max-width: 580px) {
+    flex-direction: column;
+  }
 `;
 
 const NavItem = styled.li`
