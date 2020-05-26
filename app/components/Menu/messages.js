@@ -10,14 +10,14 @@ export const scope = 'charityActivity.components.Menu';
 export default defineMessages({
   home: {
     id: `${scope}.home`,
-    defaultMessage: 'Home',
+    defaultMessage: 'Główna',
   },
   check: {
     id: `${scope}.check`,
-    defaultMessage: 'Check events',
+    defaultMessage: 'Wydarzenia',
   },
   add: {
     id: `${scope}.add`,
-    defaultMessage: 'Add event',
+    defaultMessage: 'Dodaj wydarzenie',
   },
 });
