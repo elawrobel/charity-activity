@@ -12,7 +12,6 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Menu from 'components/Menu';
 import Hero from 'components/Hero';
@@ -39,6 +38,11 @@ export default function App() {
       </Helmet>
       <Menu />
       <Hero />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/events" component={() => <span>events</span>} />
+        <Route path="" component={NotFoundPage} />
+      </Switch>
       <Footer />
     </>
   );
