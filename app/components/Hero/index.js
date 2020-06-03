@@ -5,40 +5,53 @@ import messages from './messages';
 import Hero from './hero.png';
 
 const Wrapper = styled.section`
-  padding: 4em;
+  padding: 2em;
   background: ${props => props.theme.colors.white};
   border-bottom: 1px solid black;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 
-  @media (max-width: 960px) {
-    flex-direction: column;
+  @media (min-width: 576px) {
+    flex-direction: row;
+    padding: 2em;
+  }
+
+  @media (min-width: 768px) {
+    padding: 4em;
   }
 `;
 
 const Container = styled.div`
   flex: 0 0 50%;
-  max-width: 50%;
+  max-width: 100%;
 
-  @media (max-width: 960px) {
-    max-width: 100%;
+  @media (min-width: 960px) {
+    max-width: 50%;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 3em;
+  font-size: 2em;
   text-align: left;
   font-family: ${props => props.theme.fonts.title};
   color: ${props => props.theme.colors.black};
   font-weight: bold;
+
+  @media (min-width: 960px) {
+    font-size: 3em;
+  }
 `;
 
 const Subtitle = styled.h2`
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: left;
   font-family: ${props => props.theme.fonts.title};
   color: ${props => props.theme.colors.black};
+
+  @media (min-width: 960px) {
+    font-size: 1em;
+  }
 `;
 
 const Image = styled.div`

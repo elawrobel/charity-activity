@@ -5,10 +5,20 @@ import { Link } from 'react-router-dom';
 import NormalImg from 'components/Img';
 import messages from './messages';
 import Logo from './logo.png';
+import Icon from './menu.png';
 
 const Img = styled(NormalImg)`
   width: 60px;
   display: block;
+`;
+
+const ImgIcon = styled(NormalImg)`
+  width: 60px;
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -17,16 +27,20 @@ const Wrapper = styled.div`
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 4rem;
+  padding: 2em;
+
+  @media (min-width: 768px) {
+    padding: 2em 4em;
+  }
 `;
 
 const Nav = styled.ul`
-  display: flex;
-  flex-direction: row;
+  display: none;
+  flex-direction: column;
 
-/* To DO: do mobile */
-  @media (max-width: 580px) {
-    flex-direction: column;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
   }
 `;
 
@@ -88,10 +102,13 @@ const Button = styled.button`
   }
 `;
 
+
+
 function Menu() {
   return (
     <Wrapper>
       <Img src={Logo} alt="Logo" />
+      <ActionLink />
       <Nav>
         <NavItem>
           <NavLink to="/">
@@ -116,3 +133,19 @@ function Menu() {
 }
 
 export default Menu;
+
+
+// TO DO: action on click
+function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('klikniete')
+  }
+
+  return (
+    // eslint-disable-next-line jsx-a11y/anchor-is-valid
+    <a href="#" onClick={handleClick}>
+      <ImgIcon src={Icon} alt="Logo" />
+    </a>
+  );
+}
