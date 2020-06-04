@@ -12,10 +12,9 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Menu from 'components/Menu';
-import Title from 'components/Title';
+import Hero from 'components/Hero';
 
 /*
   TODO:
@@ -35,11 +34,10 @@ export default function App() {
         titleTemplate="%s - Charity activity"
         defaultTitle="Charity activity"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="Charity activity" />
       </Helmet>
       <Menu />
-      <Title />
-      <Header />
+      <Hero />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/events" component={() => <span>events</span>} />
