@@ -15,6 +15,7 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Footer from 'components/Footer';
 import Menu from 'components/Menu';
 import Hero from 'components/Hero';
+import Counter from 'components/Counter';
 
 /*
   TODO:
@@ -38,6 +39,7 @@ export default function App() {
       </Helmet>
       <Menu />
       <Hero />
+      <Counter />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/events" component={() => <span>events</span>} />
