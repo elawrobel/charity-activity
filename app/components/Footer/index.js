@@ -9,6 +9,8 @@ import messages from './messages';
 import Logo from './logo.png';
 import Fcb from './fcb.svg';
 
+const FcbUrl = 'https://www.facebook.com/groups/235355313496727/';
+
 const Wrapper = styled.footer`
   display: flex;
   justify-content: space-between;
@@ -22,7 +24,7 @@ const Wrapper = styled.footer`
   }
 `;
 
-const FcbLink = styled(Link)`
+const FcbLink = styled.a`
   display: flex;
   text-decoration: none;
   align-items: center;
@@ -81,7 +83,7 @@ function Footer() {
       <A to="/contact">
         <FormattedMessage {...messages.contactMessage} />
       </A>
-      <FcbLink to="https://www.facebook.com/groups/235355313496727/">
+      <FcbLink href={FcbUrl} target="_blank">
         <ImgSmall src={Fcb} alt="Facebook" />
         <FormattedMessage {...messages.smMessage} />
       </FcbLink>
