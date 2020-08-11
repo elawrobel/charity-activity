@@ -8,14 +8,14 @@ import { defineMessages } from 'react-intl';
 export const scope = 'charityActivity.components.Footer';
 
 export default defineMessages({
-  licenseMessage: {
-    id: `${scope}.license.message`,
-    defaultMessage: 'This project is licensed under the MIT license.',
+  contactMessage: {
+    id: `${scope}.contact.message`,
+    defaultMessage: 'Kontakt',
   },
-  authorMessage: {
-    id: `${scope}.author.message`,
+  smMessage: {
+    id: `${scope}.sm.message`,
     defaultMessage: `
-      Made with love by {author}.
+      Znajdź nas na Facebooku!
     `,
   },
 });
