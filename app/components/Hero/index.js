@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
-import Hero from './hero.png';
+import Hero from './logo.png';
 
 const Wrapper = styled.section`
   padding: 2em;
@@ -19,15 +19,31 @@ const Wrapper = styled.section`
 
   @media (min-width: 768px) {
     padding: 4em;
+    justify-content: center;
   }
 `;
 
-const Container = styled.div`
+const ContainerText = styled.div`
   flex: 0 0 50%;
   max-width: 100%;
 
   @media (min-width: 960px) {
     max-width: 50%;
+    padding: 24px;
+    width: 100%;
+    flex-basis: 70%;
+  }
+`;
+
+const ContainerImg = styled.div`
+  flex: 0 0 50%;
+  max-width: 100%;
+
+  @media (min-width: 960px) {
+    max-width: 50%;
+    padding: 24px;
+    width: 100%;
+    flex-basis: 30%;
   }
 `;
 
@@ -68,17 +84,17 @@ function Text() {
   return (
     <>
       <Wrapper>
-        <Container>
+        <ContainerText>
           <Title>
             <FormattedMessage {...messages.title} />
           </Title>
           <Subtitle>
             <FormattedMessage {...messages.subtitle} />
           </Subtitle>
-        </Container>
-        <Container>
+        </ContainerText>
+        <ContainerImg>
           <Image />
-        </Container>
+        </ContainerImg>
       </Wrapper>
     </>
   );
